@@ -15,7 +15,6 @@ FastAPI backend, plain HTML/CSS/JS frontend. No internet connection required.
   `{"flags": [{"task": "...", "message": "..."}]}`. This is the endpoint
   a future personality/LLM layer should read its evidence from.
 
-
 ## Setup
 
 ```bash
@@ -69,6 +68,7 @@ sprandy/
 ## API Endpoints
 
 **Tasks**
+
 - `POST /tasks` — create
 - `GET /tasks?status=pending` — list (optional status filter)
 - `GET /tasks/{id}` — get one
@@ -79,6 +79,7 @@ sprandy/
 - `GET /tasks/{id}/history` — postponement history for one task
 
 **Journal**
+
 - `POST /journal` — create or update today's (or any date's) entry
 - `GET /journal?start_date=&end_date=` — list entries, optional range
 - `GET /journal/{entry_date}` — get entry for a specific date
@@ -86,12 +87,14 @@ sprandy/
 - `DELETE /journal/{entry_id}` — delete
 
 **Summaries**
+
 - `POST /summaries/daily/generate?summary_date=` — generate/refresh a day's summary
 - `GET /summaries/daily/{summary_date}` — fetch a stored summary
 - `POST /summaries/weekly/generate?week_start=` — generate/refresh a week's summary
 - `GET /summaries/weekly?week_start=&week_end=` — fetch a stored summary
 
 **Notifications**
+
 - `GET /notifications/unfinished` — overdue, incomplete tasks
 - `GET /notifications/postponed?threshold=2` — chronically postponed tasks with evidence
 - `GET /notifications/summary` — combined feed for a single notification view
@@ -142,3 +145,8 @@ the same evidence data, without touching the detection logic.
 - Editing journal entries from past dates in the UI (the API already supports it).
 - Swapping `build_callout_message()` for a local LLM call once you're ready
   to add that layer — no other code needs to change.
+  =======
+
+# Sprandy
+
+A local-first productivity assistant built with FastAPI, SQLite, and Ollama. Features task management, journaling, accountability tracking, daily summaries, and an extensible AI coaching layer.
