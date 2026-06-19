@@ -201,17 +201,6 @@ the same evidence data, without touching the detection logic.
    completed another, generated a journal entry, and generated both summary
    types, confirming the accountability flag appears with real evidence.
 
-## Suggested next steps (not built yet, by design)
-
-- Desktop notifications: a small background script polling
-  `/notifications/summary` every N minutes and firing OS notifications
-  (e.g. via `plyer` or `notify-py`) when counts are non-zero.
-- Scheduled summary generation: a daily/weekly cron-like job (e.g. `APScheduler`)
-  calling the existing `/summaries/.../generate` endpoints automatically.
-- Editing journal entries from past dates in the UI (the API already supports it).
-- Swapping `build_callout_message()` for a local LLM call once you're ready
-  to add that layer — no other code needs to change.
-  =======
 
 # Sprandy
 
