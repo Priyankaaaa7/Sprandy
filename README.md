@@ -1,4 +1,70 @@
-# Sprandy MVP (v0.12)
+# Sprandy
+
+A local-first AI productivity assistant built with FastAPI, SQLite, JavaScript, and Ollama.
+
+Sprandy combines task management, journaling, accountability tracking, daily summaries, and a local AI agent into a single personal productivity system. Unlike traditional task managers, Sprandy's AI can interact with real application data through tool-calling, allowing it to retrieve tasks, identify procrastination patterns, create new tasks, and provide evidence-based accountability.
+
+## Current Features
+
+### Productivity System
+
+* Task creation, editing, completion, and deletion
+* Due dates and priority levels
+* Postponement tracking with full history
+* Accountability detection for chronically postponed tasks
+
+### Journaling
+
+* Daily journal entries
+* Mood tracking
+* Historical journal retrieval
+
+### Summaries
+
+* Daily productivity summaries
+* Weekly productivity summaries
+* Generated from actual task and journal data
+
+### Local AI Agent
+
+* Runs entirely through Ollama
+* Supports tool-calling
+* Reads real task data instead of guessing
+* Can retrieve tasks
+* Can create tasks
+* Can postpone tasks
+* Can access accountability information
+* Works completely offline
+
+## Architecture
+
+Sprandy follows a layered architecture:
+
+Frontend (HTML/CSS/JS)
+↓
+FastAPI API Layer
+↓
+Agent / Tool Layer
+↓
+Business Logic (Services)
+↓
+SQLite Database
+
+The AI model never accesses the database directly. All actions are performed through a controlled tool interface, ensuring responses are grounded in real application data.
+
+## Privacy First
+
+All core functionality runs locally:
+
+* SQLite database stored on-device
+* Journal entries never leave the machine
+* Tasks remain local
+* Ollama model runs locally
+* No external API required
+
+This makes Sprandy suitable for personal productivity tracking without relying on cloud services.
+
+# Sprandy MVP (v0.2.0)
 
 A local-first personal productivity assistant. Single user, SQLite storage,
 FastAPI backend, plain HTML/CSS/JS frontend. No internet connection required.
