@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sprandy</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <h1>Sprandy</h1>
+    <p class="subtitle">Your accountability isn't going to manage itself.</p>
+  </header>
+
+  <main>
+    <!-- TODAY'S TASKS -->
+    <section class="card">
+      <h2>Today's Tasks</h2>
+      <form id="task-form">
+        <input type="text" id="task-title" placeholder="Task title" required>
+        <input type="date" id="task-due">
+        <select id="task-priority">
+          <option value="low">Low</option>
+          <option value="medium" selected>Medium</option>
+          <option value="high">High</option>
+        </select>
+        <button type="submit">Add</button>
+      </form>
+      <div id="today-task-list"></div>
+
+      <details>
+        <summary>Show all tasks</summary>
+        <div id="all-task-list"></div>
+      </details>
+    </section>
+
+    <!-- ACCOUNTABILITY -->
+    <section class="card accountability-card">
+      <h2>Accountability</h2>
+      <div id="accountability-content">Loading...</div>
+    </section>
+
+    <!-- JOURNAL -->
+    <section class="card">
+      <h2>Journal</h2>
+      <p class="card-meta">Today's entry</p>
+      <textarea id="journal-content" placeholder="What happened today?"></textarea>
+      <input type="text" id="journal-mood" placeholder="Mood (optional)">
+      <button id="journal-save">Save Entry</button>
+      <span id="journal-status"></span>
+    </section>
+
+    <!-- SUMMARY -->
+    <section class="card">
+      <h2>Summary</h2>
+      <p class="card-meta" id="summary-label">Yesterday's summary</p>
+      <pre id="summary-output">Loading...</pre>
+      <div class="summary-actions">
+        <button id="gen-daily">Generate Today's</button>
+        <button id="gen-weekly">Generate This Week's</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
